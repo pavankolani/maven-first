@@ -46,9 +46,22 @@ pipeline {
             }
         }
 
+        stage("Run sonarqube"){
+
+            steps{
+
+                withSonarQubeEnv(credentialId: 'jenkins', installationName: 'sonar'){
+
+                    sh "${SCANNER_HOME}/bin/sonar-scanner"
+                }
+            }
+        }
+
 
 
 
     }
     
 }
+
+
