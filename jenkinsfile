@@ -50,7 +50,7 @@ pipeline {
 
             steps{
 
-                withSonarQubeEnv(credentialId: 'jenkins', installationName: 'sonar'){
+                withSonarQubeEnv(credentialsId: 'jenkins', installationName: 'sonar'){
 
                     sh "${SCANNER_HOME}/bin/sonar-scanner"
                 }
